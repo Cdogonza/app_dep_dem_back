@@ -16,7 +16,7 @@ exports.register = (req, res) => {
     const hashedPassword = bcrypt.hashSync(password, 8);
 
     // Insertar el nuevo usuario en la base de datos
-    db.query('INSERT INTO users (username, password, email) VALUES (?, ?, ?)', [username, hashedPassword, email], (err, results) => {
+    db.query('INSERT INTO u154726602_equipos.users (username, password, email) VALUES (?, ?, ?)', [username, hashedPassword, email], (err, results) => {
         if (err) {
             // Manejar errores de duplicados
             if (err.code === 'ER_DUP_ENTRY') {
@@ -32,7 +32,7 @@ exports.register = (req, res) => {
 exports.login = (req, res) => {
     const { username, password } = req.body;
 
-    db.query('SELECT * FROM users WHERE username = ?', [username], (err, results) => {
+    db.query('SELECT * FROM u154726602_equipos.users WHERE username = ?', [username], (err, results) => {
         if (err) return res.status(500).send("Error en la base de datos.");
         if (results.length === 0) return res.status(404).send("Usuario no encontrado.");
 
@@ -50,7 +50,7 @@ exports.login = (req, res) => {
 exports.resetPassword = (req, res) => {
     const { email } = req.body;
 
-    db.query('SELECT * FROM users WHERE email = ?', [email], (err, results) => {
+    db.query('SELECT * FROM u154726602_equipos.users WHERE email = ?', [email], (err, results) => {
         if (err) return res.status(500).send("Error en la base de datos.");
         if (results.length === 0) return res.status(404).send("Usuario no encontrado.");
 

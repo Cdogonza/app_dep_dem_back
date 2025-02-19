@@ -9,8 +9,10 @@ exports.getAllEquipos = (req, res) => {
     //     if (err) return res.status(500).json(err);
     //     res.json(results);
     // });
-    alert("Funciona el backend");
-};
+
+  
+}
+
 // Crear un nuevo equipo
 exports.createEquipo = (req, res) => {
     const nuevoEquipo = req.body;
