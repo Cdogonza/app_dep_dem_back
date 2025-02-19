@@ -8,8 +8,15 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
 
+
+const corsOptions = {
+    origin: ['https://gold-porpoise-471965.hostingersite.com', 'http://localhost:4200'],
+    methods: ['GET', 'POST'],
+    credentials: true,
+};
 // Middleware para parsear JSON
 //app.use(express.json());
+app.use(cors(corsOptions));
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*'); // Permitir cualquier origen, ajusta según tus necesidades
     res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
