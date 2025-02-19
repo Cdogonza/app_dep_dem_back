@@ -5,10 +5,10 @@ const db = require('../db.js'); // Asegúrate de crear un archivo db.js para man
 
 // Obtener todos los equipos
 exports.getAllEquipos = (req, res) => {
-    // db.query('SELECT * FROM u154726602_equipos.equipos', (err, results) => {
-    //     if (err) return res.status(500).json(err);
-    //     res.json(results);
-    // });
+    db.query('SELECT * FROM u154726602_equipos.equipos', (err, results) => {
+        if (err) return res.status(500).json(err);
+        res.json(results);
+    });
 
   
 }
