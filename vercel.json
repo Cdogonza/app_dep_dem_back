@@ -7,25 +7,9 @@
         }
     ],
     "routes": [
-      {
-          "src": "/auth/login",
-          "dest": "/server.js"
-      },
-      {
-          "src": "/novedades",
-          "dest": "/server.js"
-      },
-      {
-        "src": "/equipos",
-        "dest": "/server.js"
-    },
-    {
-      "src": "/taller",
-      "dest": "/server.js"
-  },
-      {
-          "src": "/",
-          "dest": "/server.js"
-      }
-  ]
+        {
+            "src": "/(.*)",
+            "dest": "/server.js"
+        }
+    ]
 }
