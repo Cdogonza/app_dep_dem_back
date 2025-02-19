@@ -7,9 +7,25 @@
         }
     ],
     "routes": [
-        {
-            "src": "/",
-            "dest": "/server.js"
-        }
-    ]
+      {
+          "src": "/auth",
+          "dest": "/server.js"
+      },
+      {
+          "src": "/novedades",
+          "dest": "/server.js"
+      },
+      {
+        "src": "/equipos",
+        "dest": "/server.js"
+    },
+    {
+      "src": "/taller",
+      "dest": "/server.js"
+  },
+      {
+          "src": "/",
+          "dest": "/server.js"
+      }
+  ]
 }

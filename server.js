@@ -56,7 +56,6 @@ db.connect(err => {
 app.use('/equipos', require('./routes/equipos'));
 app.use('/novedades', require('./routes/novedades'));
 app.use('/taller', require('./routes/taller'));
-
 app.use('/auth', authRoutes);
 
 
